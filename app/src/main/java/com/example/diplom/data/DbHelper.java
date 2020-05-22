@@ -1,4 +1,4 @@
-package com.example.diplom;
+package com.example.diplom.data;
 
 import android.content.ContentValues;
 import android.content.Context;

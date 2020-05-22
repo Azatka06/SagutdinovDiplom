@@ -1,10 +1,13 @@
-package com.example.diplom;
+package com.example.diplom.repository;
 
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.Nullable;
+
+import com.example.diplom.data.DbHelper;
+import com.example.diplom.data.Keystore;
 
 public class DbKeystore implements Keystore {
     private SQLiteDatabase database;

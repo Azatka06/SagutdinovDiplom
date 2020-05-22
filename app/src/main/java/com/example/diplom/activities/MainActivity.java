@@ -1,4 +1,4 @@
-package com.example.diplom;
+package com.example.diplom.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.example.diplom.AppConstants;
+import com.example.diplom.data.DbHelper;
+import com.example.diplom.adapters.AdapterList;
 import com.sagutdinov.diplom.R;
 
 public class MainActivity extends AppCompatActivity {

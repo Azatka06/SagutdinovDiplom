@@ -1,8 +1,12 @@
-package com.example.diplom;
+package com.example.diplom.repository;
 
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import com.example.diplom.data.DbHelper;
+import com.example.diplom.models.Note;
+import com.example.diplom.data.NoteStore;
 
 import java.text.DateFormat;
 import java.text.ParseException;

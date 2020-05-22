@@ -1,10 +1,11 @@
-package com.example.diplom;
+package com.example.diplom.adapters;
 
 import android.content.Context;
 import android.widget.SimpleAdapter;
 
 import androidx.annotation.NonNull;
 
+import com.example.diplom.App;
 import com.sagutdinov.diplom.R;
 
 import java.util.List;
@@ -25,7 +26,7 @@ public class AdapterList {
     }
     @NonNull
     public SimpleAdapter createAdapter() {
-        adapterList=App.getNoteHolder().getData(admin,name);
+        adapterList= App.getNoteHolder().getData(admin,name);
         return new SimpleAdapter(context, adapterList, R.layout.list_item, new String[]{HEAD, BODY, DATE}, new int[]{R.id.head, R.id.body, R.id.date});
     }
 

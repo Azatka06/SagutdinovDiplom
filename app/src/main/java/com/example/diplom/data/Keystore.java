@@ -1,7 +1,7 @@
-package com.example.diplom;
+package com.example.diplom.data;
 import androidx.annotation.Nullable;
 
-interface Keystore {
+public interface Keystore {
     boolean userExists(String userName);
     @Nullable
     String isAdmin(String userName, String pin);

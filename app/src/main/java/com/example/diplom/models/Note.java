@@ -1,4 +1,4 @@
-package com.example.diplom;
+package com.example.diplom.models;
 
 public class Note {
     private String headText;

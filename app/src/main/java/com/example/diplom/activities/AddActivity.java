@@ -1,4 +1,4 @@
-package com.example.diplom;
+package com.example.diplom.activities;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,6 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.diplom.App;
+import com.example.diplom.AppConstants;
+import com.example.diplom.models.Note;
 import com.sagutdinov.diplom.R;
 
 import java.util.Calendar;
@@ -47,7 +50,7 @@ public class AddActivity extends AppCompatActivity {
         creatorName = getIntent().getExtras().getString(AppConstants.name);
         if (getIntent().getExtras().containsKey(AppConstants.noteId)) {
             noteId=getIntent().getExtras().getString(AppConstants.noteId);
-            final Note noteText=App.getNoteHolder().getNote(noteId);
+            final Note noteText= App.getNoteHolder().getNote(noteId);
             headText.setText(noteText.getHeadText());
             bodyText.setText(noteText.getBodyText());
             deadlineSelector.setDate(noteText.getDate(),true,true);

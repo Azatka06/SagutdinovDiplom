@@ -1,4 +1,4 @@
-package com.example.diplom;
+package com.example.diplom.activities;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -13,13 +13,15 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.diplom.App;
+import com.example.diplom.AppConstants;
+import com.example.diplom.data.Keystore;
 import com.sagutdinov.diplom.R;
 
 public class EnterActivity extends AppCompatActivity {
     private int placeholderIndex = 0;
     private ImageView[] placeholders;
     private String cashedPass;
-    private String name;
     private EditText loginText;
 
     @Override
@@ -31,7 +33,10 @@ public class EnterActivity extends AppCompatActivity {
 
     private void init() {
         loginText = findViewById(R.id.editText);
-        placeholders = new ImageView[]{findViewById(R.id.placeholder0), findViewById(R.id.placeholder1), findViewById(R.id.placeholder2), findViewById(R.id.placeholder3)};
+        placeholders = new ImageView[]{findViewById(R.id.placeholder0),
+                findViewById(R.id.placeholder1),
+                findViewById(R.id.placeholder2),
+                findViewById(R.id.placeholder3)};
     }
 
     public void clickNumber(View v) {
@@ -46,7 +51,7 @@ public class EnterActivity extends AppCompatActivity {
         } else {
             placeholders[placeholderIndex].setImageDrawable(getDrawable(R.drawable.placeholder_process));
             cashedPass += ((Button) v).getText().toString();
-            name = loginText.getText().toString();
+            final String name = loginText.getText().toString();
             final Keystore keystore = App.getKeystore();
             if (keystore.userExists(name)) {
                 String isAdmin = keystore.isAdmin(name, cashedPass);
